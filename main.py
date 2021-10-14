@@ -19,10 +19,10 @@ print(' 1 ➩ Si quieres listar todos las combinaciones  ')
 print(' 2 ➩ Si quieres ver las pistas de audio         ')
 print(' 3 ➩ Si solo quieres ver archivos de video      ')
 print('╚════════════════════════════════════════════════╝')
-seleccion = input()
+seleccion = int(input())
 loop = True
 while loop:
-    if(seleccion == '1'):
+    if(seleccion == 1):
         print('')
         print('Has elegido listar todas las posibles acciones')
         stream = yt.streams.filter(adaptive=True)
@@ -30,7 +30,7 @@ while loop:
             print(st)
         print("Selecciona un itag para descagar")
         descarga(int(input()))
-    if(seleccion == '2'):
+    if(seleccion == 2):
         print('')
         print('Has elegido listar todas las pistas de audio')
         stream = yt.streams.filter(only_audio=True)
@@ -38,7 +38,7 @@ while loop:
             print(st)
         print("Selecciona un itag para descagar")
         descarga(int(input()))
-    if(seleccion == '3'):
+    if(seleccion == 3):
         print('')
         print('Has elegido listar todas las pistas de video con extension mp4')
         stream = yt.streams.filter(file_extension='mp4')
@@ -46,3 +46,7 @@ while loop:
             print(st)
         print("Selecciona un itag para descagar")
         descarga(int(input()))
+    if(seleccion > 3):
+        print('')
+        print('Has elegido una opcion imposible')
+        loop = False
