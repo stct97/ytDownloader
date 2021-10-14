@@ -10,7 +10,7 @@ def descarga(itag):
         path = input('Introduce una ruta de descarga: ')
         stream = yt.streams.get_by_itag(itag)
         stream.download(output_path=disk+':/' + path)
-        print('La descarga se ha procesado correctamente visite la ruta proporcionada')
+        print('La descarga se ha procesado correctamente visite la ruta proporcionada: ' + disk+':/' + path)
     except:
         print('Ha ocurrido un error')
 
@@ -34,6 +34,7 @@ def data():
                 print(st)
             print("Selecciona un itag para descagar")
             descarga(int(input()))
+            break
         if(seleccion == 2):
             print('')
             print('Has elegido listar todas las pistas de audio')
@@ -42,6 +43,7 @@ def data():
                 print(st)
             print("Selecciona un itag para descagar")
             descarga(int(input()))
+            break
         if(seleccion == 3):
             print('')
             print('Has elegido listar todas las pistas de video con extension mp4')
@@ -50,10 +52,11 @@ def data():
                 print(st)
             print("Selecciona un itag para descagar")
             descarga(int(input()))
+            break
         if(seleccion > 3):
             print('')
             print('Has elegido una opcion imposible')
-            print('¿Quieres salir de la aplicación? | si / no' )
+            print('¿Quieres salir de la aplicación? | si / no')
             if(input() == 'si'):
                 loop = False
             else:
@@ -64,5 +67,6 @@ def data():
                 print(' 3 ➩ Si solo quieres ver archivos de video      ')
                 print('╚════════════════════════════════════════════════╝')
                 seleccion = int(input())
+
 
 data()
